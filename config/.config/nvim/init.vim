@@ -26,6 +26,7 @@ set lcs=tab:>-,trail:-                                  " Set chars to display i
 set encoding=utf-8
 set number relativenumber
 set wildmode=longest,list,full                          " autocompeletion options
+set guicursor=a:blinkon100
 
 "================================ Plugin ================================
 " Install vim-plugin if not exist.
