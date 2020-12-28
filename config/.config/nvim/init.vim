@@ -26,7 +26,11 @@ set lcs=tab:>-,trail:-                                  " Set chars to display i
 set encoding=utf-8
 set number relativenumber
 set wildmode=longest,list,full                          " autocompeletion options
-set guicursor=a:blinkon100
+set ic                                                  " set serach ignore case by default
+" To enable mode shapes, "Cursor" highlight, and blinking
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+                  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+                  \,sm:block-blinkwait175-blinkoff150-blinkon175
 
 "================================ Plugin ================================
 " Install vim-plugin if not exist.
