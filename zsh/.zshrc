@@ -56,9 +56,9 @@ alias l='ls -CF'
 # Load syntax highlighting; should be last.
 source $ZSHDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
-echo '================================'
+echo '============================'
 echo $(date)
-echo '================================'
+echo '============================'
 echo
 echo 'Welcome back'
 echo
