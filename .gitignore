@@ -1,1 +1,3 @@
 zsh/.zsh/history
+config/.config/nvim/autoload
+config/.config/nvim/plugged

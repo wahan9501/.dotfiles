@@ -1,7 +1,11 @@
-export EDITOR="vim"
+# Envrionment variables
+export EDITOR="nvim"
 export ZSHDIR="$HOME/.zsh"
+export XDG_CONFIG_HOME="$HOME/.config"
+export KEYTIMEOUT=1
 
-. $ZSHDIR/git-prompt.sh
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
@@ -10,6 +14,7 @@ PS1="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$rese
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 setopt prompt_subst
+. $ZSHDIR/git-prompt.sh
 export RPROMPT=$'$(__git_ps1 "%s")'
 
 # History in cache directory:
@@ -24,22 +29,17 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-#bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
-
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+bindkey '^[g' backward-word
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -53,6 +53,8 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+alias magit="nvim -c MagitOnly"
 
 # Load syntax highlighting; should be last.
 source $ZSHDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
