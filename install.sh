@@ -3,6 +3,7 @@ echo "Dotfile install start..."
 echo
 
 git submodule init
+git submodule update
 
 stow zsh
 

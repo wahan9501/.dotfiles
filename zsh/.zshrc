@@ -4,6 +4,8 @@ export ZSHDIR="$HOME/.zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 export KEYTIMEOUT=1
 
+. $ZSHDIR/git-prompt.sh
+
 # Use neovim for vim if present.
 [ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
 
@@ -14,7 +16,6 @@ PS1="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$rese
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 setopt prompt_subst
-. $ZSHDIR/git-prompt.sh
 export RPROMPT=$'$(__git_ps1 "%s")'
 
 # History in cache directory:
