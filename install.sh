@@ -1,7 +1,11 @@
 #!/bin/zsh
-echo "Dotfile install start"
+echo "Dotfile install start..."
+echo
+
+git submodule init
 
 stow zsh
 
-echo "Dotfile install finished"
+echo
+echo "Dotfile install finished..."
 echo :P

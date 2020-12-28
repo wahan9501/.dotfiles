@@ -1,7 +1,9 @@
 #!/bin/zsh
-echo "Dotfile clean start"
+echo "Dotfile clean start..."
+echo
 
 stow -D zsh
 
-echo "Dotfile clean finished"
+echo
+echo "Dotfile clean finished..."
 echo :P
