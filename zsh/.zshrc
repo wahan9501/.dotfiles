@@ -3,6 +3,7 @@ export EDITOR="nvim"
 export ZSHDIR="$HOME/.zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 export KEYTIMEOUT=1
+export HOST="/mnt/c/Users/"
 
 #================================ ZSH ================================#
 # History in cache directory:
