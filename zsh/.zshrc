@@ -1,3 +1,4 @@
+export EDITOR="vim"
 export ZSHDIR="$HOME/.zsh"
 
 . $ZSHDIR/git-prompt.sh
