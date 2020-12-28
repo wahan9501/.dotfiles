@@ -3,7 +3,7 @@ export EDITOR="nvim"
 export ZSHDIR="$HOME/.zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 export KEYTIMEOUT=1
-export HOST="/mnt/c/Users/"
+export WIN="/mnt/c/Users/"
 
 #================================ ZSH ================================#
 # History in cache directory:
@@ -18,16 +18,19 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# inline bash-style comments
+setopt interactive_comments
+stty stop undef		# Disable ctrl-s to freeze terminal.
+
 #================================ PS1 ================================#
 autoload -U colors && colors	# Load colors
-# import git prompt shell scripts
-. $ZSHDIR/git-prompt.sh
-# Enable colors and change prompt:
-PS1="%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$reset_color%}$(__git_ps1) %%%b "
-stty stop undef		# Disable ctrl-s to freeze terminal.
-setopt interactive_comments
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats ' (%b)'
+
 setopt prompt_subst
-export RPROMPT=$'$(__git_ps1 "%s")'
+PS1='%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[green]%}${vcs_info_msg_0_} %{$reset_color%}%%%b '
 
 #================================ Color ================================#
 # enable color support of ls and also add handy aliases
