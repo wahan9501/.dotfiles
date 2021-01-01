@@ -49,6 +49,7 @@ Plug 'preservim/nerdtree'               " file explorer
 Plug 'jreybert/vimagit'                 " git
 Plug 'vimwiki/vimwiki'                  " handy memo
 Plug 'tpope/vim-commentary'             " comment
+Plug 'jiangmiao/auto-pairs'             " comment
 call plug#end()
 
 " lightline plugin config
