@@ -76,3 +76,8 @@ echo
 echo 'Welcome back'
 echo
 echo :P
+
+#================================ Command ================================#
+export roll() {
+    shuf -i 1-6 -n 1
+}
