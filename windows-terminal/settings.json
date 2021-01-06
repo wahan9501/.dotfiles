@@ -14,6 +14,7 @@
     "copyOnSelect": true,
     // If enabled, formatted data is also copied to your clipboard
     "copyFormatting": false,
+    "largePasteWarning": false,
     // A profile specifies a command to execute paired with information about how it should look and feel.
     // Each one of them will appear in the 'New Tab' dropdown,
     //   and can be invoked from the commandline with `wt.exe -p xxx`
@@ -27,21 +28,21 @@
         },
         "list": [
             {
-                "guid": "{b396d73e-3b67-4a3f-8bb4-7d31b027eedc}",
-                "name": "Bash",
+                "guid": "{abf86640-c324-4a36-8f20-ae2cca10676b}",
+                "name": "Git Bash",
                 "commandline": "%PROGRAMFILES%/Git/bin/bash.exe -i -l",
+                "hidden": false,
                 "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
                 "startingDirectory": "%USERPROFILE%",
-                "closeOnExit": "always",
-                "hidden": false
+                "closeOnExit": "always"
             },
             {
                 // Make changes here to the powershell.exe profile.
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
-                "colorScheme": "Campbell Powershell",
-                "hidden": false
+                "hidden": false,
+                "colorScheme": "Campbell Powershell"
             },
             {
                 // Make changes here to the cmd.exe profile.
@@ -51,11 +52,20 @@
                 "hidden": false
             },
             {
+                "guid": "{f346b086-6537-4506-960e-4a30cf11195f}",
+                "name": "Arch",
+                "commandline": "wsl -d Arch -u han",
+                "hidden": false,
+                "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
+                "closeOnExit": "always",
+                "startingDirectory" : "//wsl$/Arch/home/han"
+            },
+            {
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
                 "name": "Ubuntu-20.04",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Ubuntu-20.04/home/han",
+                "startingDirectory" : "//wsl$/Ubuntu-20.04/home/han",
                 "closeOnExit": "always"
             },
             {
@@ -63,6 +73,13 @@
                 "hidden": true,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+                "hidden": true,
+                "name": "Arch",
+                "source": "Windows.Terminal.Wsl",
+                "closeOnExit": "always"
             }
         ]
     },
@@ -72,11 +89,12 @@
     // Add custom actions and keybindings to this array.
     // To unbind a key combination from your defaults.json, set the command to "unbound".
     // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
+    "multiLinePasteWarning": false,
     "actions": [
         // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
         // These two lines additionally bind them to Ctrl+C and Ctrl+V.
         // To learn more about selection, visit https://aka.ms/terminal-selection
-        // { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+        // {"command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
         // { "command": "paste", "keys": "ctrl+v" },
         // Press Ctrl+Shift+F to open the search box
         {
