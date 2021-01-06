@@ -62,6 +62,7 @@ bindkey "^[[1;5D"   backward-word
 bindkey "^[[1;5C"   forward-word
 bindkey "^[[3~"   	delete-char
 bindkey "^[[Z"   	reverse-menu-complete
+bindkey -s "^[\\"   "source ~/.zshrc^M"
 
 #================================ Alias ================================#
 # Use neovim for vim if present.
@@ -72,6 +73,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias vimrc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
+alias vizrc='nvim ~/.zshrc'
 alias magit="nvim -c MagitOnly"
 alias gitinit="git config user.email wahan9501@gmail.com && git config user.name han"
 
@@ -89,4 +91,7 @@ export roll() {
     shuf -i 1-6 -n 1
 }
 
+#================================ Navi ================================#
+#export FZF_DEFAULT_OPTS="--height 20%" navi
+export NAVI_FZF_OVERRIDES="--height 20%" navi
 eval "$(navi widget zsh)"
