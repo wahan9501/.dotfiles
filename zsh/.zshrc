@@ -54,8 +54,14 @@ source $ZSHDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.
 #================================ Key binding ================================#
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-bindkey '^[g' backward-word
+bindkey "^e"        edit-command-line
+bindkey "^[[H"      beginning-of-line
+bindkey "^[[F"      end-of-line
+bindkey "^H"        backward-kill-word
+bindkey "^[[1;5D"   backward-word
+bindkey "^[[1;5C"   forward-word
+bindkey "^[[3~"   	delete-char
+bindkey "^[[Z"   	reverse-menu-complete
 
 #================================ Alias ================================#
 # Use neovim for vim if present.
