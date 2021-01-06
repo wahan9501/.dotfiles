@@ -4,7 +4,7 @@ syntax on
 
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o " Disables automatic commenting on newline:
 
-set clipboard+=unnamed                                  " Add system clipboard to vim
+set clipboard+=unnamedplus                              " Add system clipboard to vim
 set splitbelow                                          " Split horizontal window to below
 set splitright                                          " Split vertical window to right
 set backspace=indent,eol,start                          " or set backspace=2, make backspace work like most other programs
@@ -36,7 +36,7 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 " Install vim-plugin if not exist.
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
   echo "Downloading junegunn/vim-plug vim plugin manager..."
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+  !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync
 endif

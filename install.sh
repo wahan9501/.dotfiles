@@ -1,10 +1,7 @@
 #!/bin/bash
 echo "Dotfile install start..."
 
-sudo apt update
-sudo apt install zsh
-sudo apt install stow
-sudo apt install neovim
+sudo pacman -Syu  zsh stow neovim --noconfirm
 
 git submodule init
 git submodule update

@@ -67,6 +67,7 @@ alias l='ls -CF'
 
 alias vimrc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 alias magit="nvim -c MagitOnly"
+alias gitinit="git config user.email wahan9501@gmail.com && git config user.name han"
 
 #================================ Welcome message ================================#
 echo '============================'
