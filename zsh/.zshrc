@@ -16,14 +16,14 @@ autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots)		# Include hidden files.
+_comp_options+=(globdots)       # Include hidden files.
 
 # inline bash-style comments
 setopt interactive_comments
-stty stop undef		# Disable ctrl-s to freeze terminal.
+stty stop undef     # Disable ctrl-s to freeze terminal.
 
 #================================ PS1 ================================#
-autoload -U colors && colors	# Load colors
+autoload -U colors && colors    # Load colors
 # Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
@@ -58,10 +58,12 @@ bindkey "^e"        edit-command-line
 bindkey "^[[H"      beginning-of-line
 bindkey "^[[F"      end-of-line
 bindkey "^H"        backward-kill-word
+bindkey "^[[3;5~"   kill-word
 bindkey "^[[1;5D"   backward-word
 bindkey "^[[1;5C"   forward-word
-bindkey "^[[3~"   	delete-char
-bindkey "^[[Z"   	reverse-menu-complete
+bindkey "^[[3~"     delete-char
+bindkey "^[[Z"      reverse-menu-complete
+bindkey '^r'        history-incremental-search-backward
 bindkey -s "^[\\"   "source ~/.zshrc^M"
 
 #================================ Alias ================================#
@@ -92,6 +94,7 @@ export roll() {
 }
 
 #================================ Navi ================================#
-#export FZF_DEFAULT_OPTS="--height 20%" navi
 export NAVI_FZF_OVERRIDES="--height 20%" navi
 eval "$(navi widget zsh)"
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh

@@ -87,11 +87,11 @@ set pastetoggle=<F2>
 let g:NoAutoComment=1
 function! ToggleAutoComment()
   if g:NoAutoComment == 1
-	setlocal formatoptions+=cro
-	let g:NoAutoComment = 0
+    setlocal formatoptions+=cro
+    let g:NoAutoComment = 0
   else
-	setlocal formatoptions-=cro
-	let g:NoAutoComment = 1
+    setlocal formatoptions-=cro
+    let g:NoAutoComment = 1
   endif
 endfunction
 command! Comment call ToggleAutoComment()
