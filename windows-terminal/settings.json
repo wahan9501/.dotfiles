@@ -27,20 +27,21 @@
         },
         "list": [
             {
-                "guid": "{abf86640-c324-4a36-8f20-ae2cca10676b}",
-                "name": "Git Bash",
+                "guid": "{b396d73e-3b67-4a3f-8bb4-7d31b027eedc}",
+                "name": "Bash",
                 "commandline": "%PROGRAMFILES%/Git/bin/bash.exe -i -l",
-                "hidden": false,
                 "icon": "%PROGRAMFILES%/Git/mingw64/share/git/git-for-windows.ico",
-                "startingDirectory": "%USERPROFILE%"
+                "startingDirectory": "%USERPROFILE%",
+                "closeOnExit": "always",
+                "hidden": false
             },
             {
                 // Make changes here to the powershell.exe profile.
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "name": "Windows PowerShell",
                 "commandline": "powershell.exe",
-                "hidden": false,
-                "colorScheme": "Campbell Powershell"
+                "colorScheme": "Campbell Powershell",
+                "hidden": false
             },
             {
                 // Make changes here to the cmd.exe profile.
@@ -54,7 +55,8 @@
                 "hidden": false,
                 "name": "Ubuntu-20.04",
                 "source": "Windows.Terminal.Wsl",
-                "startingDirectory" : "//wsl$/Ubuntu-20.04/home/han"
+                "startingDirectory": "//wsl$/Ubuntu-20.04/home/han",
+                "closeOnExit": "always"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -70,12 +72,11 @@
     // Add custom actions and keybindings to this array.
     // To unbind a key combination from your defaults.json, set the command to "unbound".
     // To learn more about actions and keybindings, visit https://aka.ms/terminal-keybindings
-    "multiLinePasteWarning": false,
     "actions": [
         // Copy and paste are bound to Ctrl+Shift+C and Ctrl+Shift+V in your defaults.json.
         // These two lines additionally bind them to Ctrl+C and Ctrl+V.
         // To learn more about selection, visit https://aka.ms/terminal-selection
-        // {"command": { "action": "copy", "singleLine": false }, "keys": "ctrl+c" },
+        // { "command": {"action": "copy", "singleLine": false }, "keys": "ctrl+c" },
         // { "command": "paste", "keys": "ctrl+v" },
         // Press Ctrl+Shift+F to open the search box
         {
