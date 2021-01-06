@@ -82,3 +82,5 @@ echo :P
 export roll() {
     shuf -i 1-6 -n 1
 }
+
+eval "$(navi widget zsh)"
