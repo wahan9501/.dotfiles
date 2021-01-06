@@ -64,7 +64,7 @@ bindkey "^[[1;5C"   forward-word
 bindkey "^[[3~"     delete-char
 bindkey "^[[Z"      reverse-menu-complete
 bindkey '^r'        history-incremental-search-backward
-bindkey -s "^[\\"   "source ~/.zshrc^M"
+bindkey -s "^[\\"   "clear && source ~/.zshrc^M"
 
 #================================ Alias ================================#
 # Use neovim for vim if present.
@@ -79,14 +79,12 @@ alias vizrc='nvim ~/.zshrc'
 alias magit="nvim -c MagitOnly"
 alias gitinit="git config user.email wahan9501@gmail.com && git config user.name han"
 
-#================================ Welcome message ================================#
-echo '============================'
-echo $(date)
-echo '============================'
-echo
-echo 'Welcome back'
-echo
-echo :P
+##================================ Welcome message ================================#
+#echo '=============================='
+#echo $(date)
+#echo '=============================='
+#echo
+#echo 'Welcome back' ':P'
 
 #================================ Command ================================#
 export roll() {
@@ -98,3 +96,5 @@ export NAVI_FZF_OVERRIDES="--height 20%" navi
 eval "$(navi widget zsh)"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+neofetch
