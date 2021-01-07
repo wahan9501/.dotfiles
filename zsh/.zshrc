@@ -3,7 +3,7 @@ export EDITOR="nvim"
 export ZSHDIR="$HOME/.zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 export KEYTIMEOUT=1
-export winuser="/mnt/c/Users/"
+export win="/mnt/c/Users/"
 
 #================================ ZSH ================================#
 # History in cache directory:
@@ -30,6 +30,9 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
+
+# set the suggestion strategy of zsh plugin autosuggestions
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # setup PS1
 autoload -U colors && colors    # Load colors
