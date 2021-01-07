@@ -13,21 +13,21 @@ install_aur()
 
         pushd $temp_dir/$package_name
 
-        makepkg -si
+        makepkg -si --noconfirm
         popd
     else
         echo "$package_name installed"
     fi
 }
 
-sudo pacman -Syu
+sudo pacman -Syu --noconfirm
 sudo pacman -S zsh --noconfirm
 sudo pacman -S stow --noconfirm
 sudo pacman -S neovim --noconfirm
 sudo pacman -S fzf --noconfirm
 sudo pacman -S neofetch --noconfirm
 sudo pacman -S pkgfile --noconfirm
-sudo pkgfile -u
+sudo pkgfile -u --noconfirm--noconfirm
 
 install_aur yay https://aur.archlinux.org/yay.git
 yay -Syu --noconfirm

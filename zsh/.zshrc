@@ -25,7 +25,7 @@ stty stop undef     # Disable ctrl-s to freeze terminal.
 # zsh plugin manager antigen
 source /usr/share/zsh/share/antigen.zsh
 # zsh plugins
-antigen use oh-my-zsh
+# antigen use oh-my-zsh
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
@@ -70,6 +70,7 @@ bindkey "^[[1;5C"   forward-word
 bindkey "^[[3~"     delete-char
 bindkey "^[[Z"      reverse-menu-complete
 #bindkey "^r"        history-incremental-search-backward
+bindkey "^N"        autosuggest-accept
 
 bindkey -s "^[\\"   "clear && source ~/.zshrc^M"
 
