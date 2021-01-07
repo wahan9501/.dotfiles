@@ -1,3 +1,0 @@
-[submodule "zsh/.zsh/plugins/fast-syntax-highlighting"]
-	path = zsh/.zsh/plugins/fast-syntax-highlighting
-	url = https://github.com/zdharma/fast-syntax-highlighting
