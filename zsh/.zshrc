@@ -3,7 +3,7 @@ export EDITOR="nvim"
 export ZSHDIR="$HOME/.zsh"
 export XDG_CONFIG_HOME="$HOME/.config"
 export KEYTIMEOUT=1
-export WIN="/mnt/c/Users/"
+export winuser="/mnt/c/Users/"
 
 #================================ ZSH ================================#
 # History in cache directory:
@@ -22,9 +22,18 @@ _comp_options+=(globdots)       # Include hidden files.
 setopt interactive_comments
 stty stop undef     # Disable ctrl-s to freeze terminal.
 
-#================================ PS1 ================================#
+# zsh plugin manager antigen
+source /usr/share/zsh/share/antigen.zsh
+# zsh plugins
+antigen use oh-my-zsh
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen apply
+
+# setup PS1
 autoload -U colors && colors    # Load colors
-# Load version control information
+## Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
 zstyle ':vcs_info:git:*' formats ' (%b)'
@@ -32,8 +41,8 @@ zstyle ':vcs_info:git:*' formats ' (%b)'
 setopt prompt_subst
 PS1='%B%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[green]%}${vcs_info_msg_0_} %{$reset_color%}%%%b '
 
-#================================ Color ================================#
-# enable color support of ls and also add handy aliases
+##================================ Color ================================#
+## enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
@@ -44,9 +53,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
-# Load syntax highlighting
-source $ZSHDIR/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -63,7 +69,8 @@ bindkey "^[[1;5D"   backward-word
 bindkey "^[[1;5C"   forward-word
 bindkey "^[[3~"     delete-char
 bindkey "^[[Z"      reverse-menu-complete
-bindkey '^r'        history-incremental-search-backward
+#bindkey "^r"        history-incremental-search-backward
+
 bindkey -s "^[\\"   "clear && source ~/.zshrc^M"
 
 #================================ Alias ================================#
@@ -93,6 +100,7 @@ export roll() {
 
 #================================ Navi ================================#
 export NAVI_FZF_OVERRIDES="--height 20%" navi
+export FZF_DEFAULT_COMMAND='find .'
 eval "$(navi widget zsh)"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh

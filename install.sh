@@ -1,28 +1,38 @@
 #!/bin/bash
 echo "Dotfile install start..."
 
-install_navi()
+install_aur()
 {
-    if [ -z `which navi` ]
+    package_name=$1
+    package_url=$2
+    if [ -z `which $package_name` ]
     then
         temp_dir=/tmp/$USER
         mkdir -p $temp_dir
-        git clone https://aur.archlinux.org/navi.git $temp_dir/navi
+        git clone $package_url $temp_dir/$package_name
 
-        pushd $temp_dir/navi
+        pushd $temp_dir/$package_name
+
         makepkg -si
         popd
     else
-        echo "navi installed"
+        echo "$package_name installed"
     fi
 }
 
-sudo pacman -Syu  zsh --noconfirm
-sudo pacman -Syu  stow --noconfirm
-sudo pacman -Syu  neovim --noconfirm
-sudo pacman -Syu  fzf --noconfirm
-sudo pacman -Syu  neofetch --noconfirm
-install_navi
+sudo pacman -Syu
+sudo pacman -S zsh --noconfirm
+sudo pacman -S stow --noconfirm
+sudo pacman -S neovim --noconfirm
+sudo pacman -S fzf --noconfirm
+sudo pacman -S neofetch --noconfirm
+sudo pacman -S pkgfile --noconfirm
+sudo pkgfile -u
+
+install_aur yay https://aur.archlinux.org/yay.git
+yay -Syu --noconfirm
+yay -S navi --noconfirm
+yay -S antigen --noconfirm
 
 git submodule init
 git submodule update

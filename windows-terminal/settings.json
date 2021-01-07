@@ -5,6 +5,7 @@
     "copyOnSelect": true,
     "copyFormatting": false,
     "largePasteWarning": false,
+    "multiLinePasteWarning": false,
     "theme": "light",
     "profiles": {
         "defaults": {
