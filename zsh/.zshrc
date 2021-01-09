@@ -119,4 +119,4 @@ if [[ "$main_attached" -le '0'  ]] && [[ "$TERM" != 'linux'  ]]; then
             exit
 fi
 
- neofetch
+neofetch
