@@ -27,7 +27,7 @@ sudo pacman -S neovim --noconfirm
 sudo pacman -S fzf --noconfirm
 sudo pacman -S neofetch --noconfirm
 sudo pacman -S pkgfile --noconfirm
-sudo pkgfile -u --noconfirm--noconfirm
+sudo pkgfile -u
 
 install_aur yay https://aur.archlinux.org/yay.git
 yay -Syu --noconfirm
@@ -40,7 +40,7 @@ git submodule update
 stow zsh
 stow config
 
-sudo chsh -s $(which zsh)
+sudo usermod -s $(which zsh)
 echo "Dotfile install finished..."
 echo :P
 

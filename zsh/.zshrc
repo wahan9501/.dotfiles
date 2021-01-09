@@ -7,8 +7,8 @@ export win="/mnt/c/Users/"
 
 #================================ ZSH ================================#
 # History in cache directory:
-HISTSIZE=10000000
-SAVEHIST=10000000
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=$ZSHDIR/history
 
 # Basic auto/tab complete:
@@ -32,7 +32,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen apply
 
 # set the suggestion strategy of zsh plugin autosuggestions
-export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_STRATEGY=(history)
 
 # setup PS1
 autoload -U colors && colors    # Load colors
