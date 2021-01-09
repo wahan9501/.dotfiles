@@ -1,6 +1,6 @@
 zsh/.zsh/history
 config/.config/*
 !config/.config/neofetch
-!config/.config/nvim
+!config/.config/nvim/init.vim
 config/.config/nvim/autoload
 config/.config/nvim/plugged

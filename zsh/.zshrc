@@ -85,8 +85,9 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias vimrc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
+alias vivimrc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 alias vizrc='nvim ~/.zshrc'
+alias vitmuxrc='nvim ~/.tmux.conf'
 alias magit="nvim -c MagitOnly"
 alias gitinit="git config user.email wahan9501@gmail.com && git config user.name han"
 
@@ -109,4 +110,13 @@ eval "$(navi widget zsh)"
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-neofetch
+#================================ TMUX ================================#
+local main_attached="$(tmux list-sessions -F '#S #{session_attached}' \
+        2>/dev/null \
+            | sed -n 's/^main[[:space:]]//p')"
+if [[ "$main_attached" -le '0'  ]] && [[ "$TERM" != 'linux'  ]]; then
+        tmux new -A -s main >/dev/null 2>&1
+            exit
+fi
+
+ neofetch
