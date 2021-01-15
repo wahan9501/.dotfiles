@@ -8,6 +8,7 @@ install_aur()
     if [ -z `which $package_name` ]
     then
         temp_dir=/tmp/$USER
+	rm -rf $temp_dir
         mkdir -p $temp_dir
         git clone $package_url $temp_dir/$package_name
 
@@ -21,11 +22,13 @@ install_aur()
 }
 
 sudo pacman -Syu --noconfirm
+sudo pacman -S base-devel --noconfirm
 sudo pacman -S zsh --noconfirm
 sudo pacman -S stow --noconfirm
 sudo pacman -S neovim --noconfirm
 sudo pacman -S fzf --noconfirm
 sudo pacman -S neofetch --noconfirm
+sudo pacman -S tmux --noconfirm
 sudo pacman -S pkgfile --noconfirm
 sudo pkgfile -u
 
@@ -33,9 +36,6 @@ install_aur yay https://aur.archlinux.org/yay.git
 yay -Syu --noconfirm
 yay -S navi --noconfirm
 yay -S antigen --noconfirm
-
-git submodule init
-git submodule update
 
 stow zsh
 stow config
