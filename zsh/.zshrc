@@ -74,7 +74,6 @@ bindkey "^[[3~"     delete-char
 bindkey "^[[Z"      reverse-menu-complete
 #bindkey "^r"        history-incremental-search-backward
 bindkey "^N"        autosuggest-accept
-
 bindkey -s "^[\\"   "clear && source ~/.zshrc^M"
 
 #================================ Alias ================================#
