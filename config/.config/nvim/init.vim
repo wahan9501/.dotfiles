@@ -1,4 +1,5 @@
 "================================ General ================================
+" set shell=/bin/zsh
 filetype indent plugin on           " turn on filtype detection, indent, plugin
 syntax on
 
