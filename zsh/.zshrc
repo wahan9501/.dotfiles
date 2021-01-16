@@ -105,6 +105,15 @@ export roll() {
     shuf -i 1-6 -n 1
 }
 
+export tgc() {
+    if [ -z `which tmux` ]
+    then
+        echo tmux not installed
+    else
+        tmux split-window -h "git commit"
+    fi
+}
+
 #================================ Navi ================================#
 export NAVI_FZF_OVERRIDES="--height 20%" navi
 export FZF_DEFAULT_COMMAND='find .'
