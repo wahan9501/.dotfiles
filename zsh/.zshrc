@@ -9,7 +9,9 @@ export win="/mnt/c/Users/"
 # History in cache directory:
 HISTSIZE=1000000
 SAVEHIST=1000000
-HISTFILE=$ZSHDIR/history
+HISTFILE=$ZSHDIR/.zsh_history
+setopt INC_APPEND_HISTORY_TIME
+mkdir -p ~/.zsh
 
 # Basic auto/tab complete:
 autoload -U compinit
