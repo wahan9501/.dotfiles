@@ -1,4 +1,4 @@
-zsh/.zsh/history
+zsh/.zsh/*
 config/.config/*
 !config/.config/neofetch
 !config/.config/nvim/init.vim
