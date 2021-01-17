@@ -24,7 +24,7 @@ set scrolloff=0                                         " force no line above an
 set noshowmode                                          " we use lightline plugin instead of default status line
 set lcs=tab:>-,trail:-                                  " Set chars to display invisible characters (:list! to toggle invisible symbol display)
 set encoding=utf-8
-set number relativenumber
+" set number relativenumber
 set wildmode=longest,list,full                          " autocompeletion options
 set ic                                                  " set serach ignore case by default
 " To enable mode shapes, "Cursor" highlight, and blinking
