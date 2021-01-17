@@ -1,0 +1,21 @@
+#!/bin/bash
+echo "Dotfile install start..."
+
+sudo apt update
+sudo apt install -y zsh
+sudo apt install -y zsh-antigen
+sudo apt install -y stow
+sudo apt install -y neovim
+sudo apt install -y fzf
+sudo apt install -y neofetch
+sudo apt install -y tmux
+
+stow zsh
+stow tmux
+stow config
+
+sudo usermod -s $(which zsh)
+echo "Dotfile install finished..."
+echo :P
+
+clear && exec zsh
