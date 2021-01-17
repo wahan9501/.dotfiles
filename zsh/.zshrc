@@ -25,7 +25,15 @@ setopt interactive_comments
 stty stop undef     # Disable ctrl-s to freeze terminal.
 
 # zsh plugin manager antigen
-source /usr/share/zsh/share/antigen.zsh
+if [ -z "~/.zsh/antigen.zsh" ]
+then
+    echo antigen not installed
+    echo install antigen...
+    curl -L git.io/antigen > ~/.zsh/antigen.zsh
+    echo antigen installed
+fi
+
+source ~/.zsh/antigen.zsh
 # zsh plugins
 # antigen use oh-my-zsh
 antigen bundle command-not-found
@@ -116,14 +124,33 @@ export tgc() {
 }
 
 #================================ Navi ================================#
-export NAVI_FZF_OVERRIDES="--height 20%" navi
-export FZF_DEFAULT_COMMAND='find .'
-eval "$(navi widget zsh)"
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+which navi > /dev/null
+if [ $? -eq 0 ]
+then
+    export NAVI_FZF_OVERRIDES="--height 20%" navi
+    export FZF_DEFAULT_COMMAND='find .'
+    eval "$(navi widget zsh)"
+fi
+
+#================================ FZF ================================#
+which fzf > /dev/null
+if [ $? -eq 0 ]
+then
+    if test -e /usr/share/fzf/key-bindings.zsh && test -e /usr/share/fzf/completion.zsh
+    then
+        source /usr/share/fzf/key-bindings.zsh
+        source /usr/share/fzf/completion.zsh
+    fi
+    if test -e /usr/share/doc/fzf/examples/key-bindings.zsh && test -e /usr/share/doc/fzf/examples/completion.zsh
+    then
+        source /usr/share/doc/fzf/examples/key-bindings.zsh
+        source /usr/share/doc/fzf/examples/completion.zsh
+    fi
+fi
 
 #================================ TMUX ================================#
-if [ ! -z `which tmux` ]
+which tmux > /dev/null
+if [ $? -eq 0 ]
 then
     local main_attached="$(tmux list-sessions -F '#S #{session_attached}' \
             2>/dev/null \
