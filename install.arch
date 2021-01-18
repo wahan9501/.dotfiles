@@ -38,6 +38,7 @@ yay -S navi --noconfirm
 yay -S antigen --noconfirm
 
 stow zsh
+stow tmux
 stow config
 
 sudo usermod -s $(which zsh)
