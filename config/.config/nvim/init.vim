@@ -53,12 +53,14 @@ Plug 'jreybert/vimagit'                 " git
 Plug 'vimwiki/vimwiki'                  " handy memo
 call plug#end()
 
-"" lightline plugin config
-"let g:lightline = {
-"      \ 'active': {
-"      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
-"      \ }
-"      \ }
+" lightline plugin config
+let g:lightline = { 'active': { 'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ], } }
+" vimwiki plugin config
+let g:vimwiki_list = [{'path': '~/.config/nvim/vimwiki/', 'path_html': '~/public_html/', 'syntax': 'markdown', 'ext': 'md'}]
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
+" markdown instant config
+let g:instant_markdown_autostart = 0    " disable autostart
+map <leader>md :InstantMarkdownPreview<CR>"
 
 "================================ Key mapping ================================
 " Shortcutting split navigation, saving a keypress:
@@ -80,8 +82,8 @@ vnoremap y y`]
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 " set <F2> for toggle paste mode
 set pastetoggle=<F2>
-
-" Nerd tree
+" set \v for vertical split vimwiki link
+nnoremap <leader>v :VimwikiVSplitLink<CR>
 
 "================================ Command ================================
 " Toggle auto comment
