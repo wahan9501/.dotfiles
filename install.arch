@@ -35,7 +35,6 @@ sudo pkgfile -u
 install_aur yay https://aur.archlinux.org/yay.git
 yay -Syu --noconfirm
 yay -S navi --noconfirm
-yay -S antigen --noconfirm
 
 stow zsh
 stow tmux

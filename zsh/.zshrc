@@ -25,7 +25,7 @@ setopt interactive_comments
 stty stop undef     # Disable ctrl-s to freeze terminal.
 
 # zsh plugin manager antigen
-if [ -z "~/.zsh/antigen.zsh" ]
+if [ ! -f ~/.zsh/antigen.zsh ]
 then
     echo antigen not installed
     echo install antigen...
