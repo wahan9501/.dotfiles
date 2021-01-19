@@ -40,7 +40,7 @@ stow zsh
 stow tmux
 stow config
 
-sudo usermod -s $(which zsh)
+sudo usermod $USER -s $(which zsh)
 echo "Dotfile install finished..."
 echo :P
 
