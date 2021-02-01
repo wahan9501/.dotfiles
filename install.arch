@@ -39,6 +39,7 @@ yay -S navi --noconfirm
 stow zsh
 stow tmux
 stow config
+stow local
 
 sudo usermod $USER -s $(which zsh)
 echo "Dotfile install finished..."

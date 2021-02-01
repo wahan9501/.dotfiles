@@ -94,6 +94,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias vi='nvim'
 alias cdd='cd ~/.dotfiles'
 alias vinavicheatsheet='nvim ~/.local/share/navi/cheats/han.cheat'
 alias vivimrc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
