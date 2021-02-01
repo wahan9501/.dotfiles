@@ -94,6 +94,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+alias cdd='cd ~/.dotfiles'
+alias vinavicheatsheet='nvim ~/.local/share/navi/cheats/han.cheat'
 alias vivimrc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 alias vizrc='nvim ~/.zshrc'
 alias vitmuxrc='nvim ~/.tmux.conf'
@@ -161,11 +163,11 @@ then
     fi
 fi
 
-#================================ NODE ================================#
-if test -e /usr/share/nvm/init-nvm.sh
-then
-    source /usr/share/nvm/init-nvm.sh
-    nvm use node
-fi
+##================================ NODE ================================#
+#if test -e /usr/share/nvm/init-nvm.sh
+#then
+#    source /usr/share/nvm/init-nvm.sh
+#    nvm use node
+#fi
 
 neofetch
