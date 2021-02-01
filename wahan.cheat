@@ -1,0 +1,14 @@
+% navi
+
+# Browse existing navi cheatsheet repos
+navi repo browse
+
+% node
+# install node version manager
+yay -S nvm
+
+# nvm install 12.x LTS node
+nvm install --lts=Erbium
+
+# nvm list LTS
+nvm ls-remote --lts

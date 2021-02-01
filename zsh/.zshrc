@@ -161,4 +161,11 @@ then
     fi
 fi
 
+#================================ NODE ================================#
+if test -e /usr/share/nvm/init-nvm.sh
+then
+    source /usr/share/nvm/init-nvm.sh
+    nvm use node
+fi
+
 neofetch
