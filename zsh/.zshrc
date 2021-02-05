@@ -74,8 +74,8 @@ fi
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey "^e"        edit-command-line
-bindkey "^[[H"      beginning-of-line
-bindkey "^[[F"      end-of-line
+bindkey "^[[1~"      beginning-of-line
+bindkey "^[[4~"      end-of-line
 bindkey "^H"        backward-kill-word
 bindkey "^[[3;5~"   kill-word
 bindkey "^[[1;5D"   backward-word
@@ -84,7 +84,8 @@ bindkey "^[[3~"     delete-char
 bindkey "^[[Z"      reverse-menu-complete
 #bindkey "^r"        history-incremental-search-backward
 bindkey "^N"        autosuggest-accept
-bindkey -s "^[\\"   "clear && source ~/.zshrc^M"
+bindkey -s "^\\"   "clear && source ~/.zshrc^M"
+bindkey -s "^P"     "navi^M"
 
 #================================ Alias ================================#
 # Use neovim for vim if present.
@@ -96,7 +97,7 @@ alias l='ls -CF'
 
 alias vi='nvim'
 alias cdd='cd ~/.dotfiles'
-alias vinavicheatsheet='nvim ~/.local/share/navi/cheats/han.cheat'
+alias vicheatsheets='nvim ~/.local/share/navi/cheats/han.cheat'
 alias vivimrc='nvim $XDG_CONFIG_HOME/nvim/init.vim'
 alias vizrc='nvim ~/.zshrc'
 alias vitmuxrc='nvim ~/.tmux.conf'

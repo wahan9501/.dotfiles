@@ -13,3 +13,5 @@ nvm install --lts=Erbium
 # nvm list LTS
 nvm ls-remote --lts
 
+# create react app
+yarn create react-app <project_name> --template=typescript
