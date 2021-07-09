@@ -24,7 +24,9 @@ import * as ns from 'export'; /* 'ns' now has properties 'default', 'b' & 'c',
 # Terminology
 - Modal vs Modeless
   https://en.wikipedia.org/wiki/Modal_window
+  
   Modal is sub window/dialog that block main window before user react.
+  
   Modeless window is simimlar window but don't block user.
 
 
