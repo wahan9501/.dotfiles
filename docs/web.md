@@ -28,6 +28,8 @@ import * as ns from 'export'; /* 'ns' now has properties 'default', 'b' & 'c',
   Modal is sub window/dialog that block main window before user react.
   
   Modeless window is simimlar window but don't block user.
+  
+- **CSR** - Certificate Signing Request
 
 
 
